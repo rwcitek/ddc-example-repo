@@ -4,7 +4,7 @@ def metadata( dataframe ):
   '''Given a dataframe, returns a dataframe of metadata about the dataframe'''
   metatdata_df = dataframe.describe( include = "all" ).transpose()
   metatdata_df = metatdata_df.astype( {"count": int }).rename( columns = {"50%": "median"})
-  metatdata_df["unique"] = metatdata_df.nunique()
+  metatdata_df["unique"] = dataframe.nunique()
   metatdata_df["Nulls"] = dataframe.isnull().sum()
   metatdata_df["Nulls_pct"] = ( metatdata_df["Nulls"] / dataframe.shape[0] * 100 ).round(1)
   metatdata_df["Data_types"] = dataframe.dtypes
