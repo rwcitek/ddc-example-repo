@@ -11,6 +11,9 @@ def metadata( dataframe ):
   metadata_df["NUnique"] = dataframe.nunique()
   metadata_df["NUnique_pct"] = (dataframe.nunique() / metadata_df["Count"] * 100).round(1)
   metadata_df = metadata_df.join( dataframe.describe( include = "all" ).transpose() )
+  metadata_df["IRQ"] = metadata_df["75%"] - metadata_df["25%"]
+  metadata_df["range"] = metadata_df["max"] - metadata_df["min"]
+  metadata_df["sum"] = metadata_df["mean"] * metadata_df["count"]
   metadata_df = (
     metadata_df
     .astype( { "count" : int } )
