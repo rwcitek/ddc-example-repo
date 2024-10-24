@@ -1,4 +1,0 @@
-
-def yo():
-  print("yo!")
-  
