@@ -1,1 +1,2 @@
-from .my_module import hw
+from .my_module import *
+from .metadata import *
