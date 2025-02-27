@@ -1,1 +1,1 @@
-# stub
+from .my_module import *
