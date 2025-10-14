@@ -2,6 +2,6 @@
 def hw():
   print("Hello, world.")
 
-del foobar():
+def foobar():
   print("Happy Birthday!")
 
